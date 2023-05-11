@@ -1,17 +1,24 @@
 // import { Center, Heading } from "@chakra-ui/react";
+// import "./RecipeListPage.css";
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/ui/recipeCard.jsx";
 
-export const RecipeListPage = () => {
-  const recipe = data.hits[0];
+export function RecipeListPage() {
+  // const recipeList = data.hits[0];
+  // return <RecipeCard recipe={recipeList} />;
 
-  return <RecipeCard recipe={recipe} />;
-};
+  const recipeList = data.hits.map((recipe) => {
+    const dish = recipe.recipe;
+    // console.log(dish);
+    return { dish };
+  });
+  console.log(recipeList);
 
-// export const RecipeListPage = () => {
-//   return (
-//     <Center h="100vh" flexDir="column">
-//       <Heading>Your Recipe App</Heading>
-//     </Center>
-//   );
-// };
+  recipeList.forEach((recipe) => {
+    return (
+      <div>
+        <RecipeCard recipe={recipe} />
+      </div>
+    );
+  });
+}
