@@ -1,4 +1,23 @@
 .recipeCard {
   width: 45vw;
-  border: solid black 2px;
+  border-radius: 15px;
+  text-align: center;
 }
+
+.recipeCardPicture {
+  border-radius: 15px 15px 0px 0px;
+  width: 45vw;
+  height: 30vw;
+}
+
+.recipeCardInfoBox {
+  border-radius: 0px 0px 15px 15px;
+  background-color: white;
+}
+.recipeCardInfoBox :first-child {
+  color: grey;
+}
+.recipeCardInfoBox :nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=RecipeCard.css.map */

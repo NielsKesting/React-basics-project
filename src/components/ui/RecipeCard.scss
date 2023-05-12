@@ -1,0 +1,26 @@
+$recipeCardCorner: 15px;
+
+.recipeCard {
+  width: 45vw;
+  border-radius: $recipeCardCorner;
+  text-align: center;
+}
+
+.recipeCardPicture {
+  border-radius: $recipeCardCorner $recipeCardCorner 0px 0px;
+  width: 45vw;
+  height: 30vw;
+}
+
+.recipeCardInfoBox {
+  border-radius: 0px 0px $recipeCardCorner $recipeCardCorner;
+  background-color: white;
+
+  :first-child {
+    color: grey;
+  }
+  :nth-child(2) {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
