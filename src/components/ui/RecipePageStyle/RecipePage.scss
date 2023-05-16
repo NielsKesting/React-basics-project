@@ -1,0 +1,39 @@
+.recipePage {
+  width: 800px;
+  display: grid;
+  grid-template-rows: 2vw 30vw auto;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "banner banner"
+    "picture picture"
+    "infoLeft infoRight";
+
+  .recipePageBanner {
+    background-color: white;
+    width: auto;
+    height: 50px;
+    grid-area: banner;
+  }
+
+  .recipePagePicture {
+    grid-area: picture;
+    width: auto;
+    height: auto;
+  }
+  .recipePageInfoLeft {
+    grid-area: infoLeft;
+    background-color: red;
+    width: auto;
+    height: 200px;
+  }
+
+  .recipePageInfoRight {
+    grid-area: infoRight;
+    background-color: blue;
+    width: auto;
+    height: 200px;
+  }
+}
+.healthLabelList {
+  background-color: red;
+}
