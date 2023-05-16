@@ -1,29 +1,45 @@
 import "./RecipeCard.css";
 
 export const RecipeCard = (recipe) => {
-  console.log(recipe);
-  const cardInfo = recipe.recipe.recipe;
-
+  const info = recipe.recipe.recipe;
+  
   const veganVegetarian = () => {
-    if (cardInfo.healthLabels.includes("Vegan")) {
+    if (info.healthLabels.includes("Vegan")) {
       return "Vegan";
-    } else if (cardInfo.healthLabels.includes("Vegetarian")) {
+    } else if (info.healthLabels.includes("Vegetarian")) {
       return "Vegetarian";
     }
   };
+  
+  const cautions = () => {
+    if (info.cautions.length !== 0) {
+      let cautionList = info.cautions.map((cautions) =>{
+      return <li>{cautions}</li>
+      })
+      
+      return (
+        <>
+        <p>Cautions:</p>
+        <ul className="cautionList">
+          
+          {cautionList}
+        </ul>
+        </>
+      )
+    }
+  }
 
   return (
     <>
       <div className="recipeCard">
-        <img src={cardInfo.image} className="recipeCardPicture"></img>
+        <img src={info.image} className="recipeCardPicture"></img>
         <div className="recipeCardInfoBox">
-          <p>{cardInfo.mealType}</p>
-          <h2>{cardInfo.label}</h2>
+          <p>{info.mealType}</p>
+          <h2>{info.label}</h2>
           <p>{veganVegetarian()}</p>
-          <p>{cardInfo.dietLabels}</p>
-          <p>Dish: {cardInfo.dishType}</p>
-          <p>Cautions</p>
-          <p>{cardInfo.cautions}</p>
+          <p>{info.dietLabels}</p>
+          <p>Dish: {info.dishType}</p>
+          {cautions()}
         </div>
       </div>
     </>

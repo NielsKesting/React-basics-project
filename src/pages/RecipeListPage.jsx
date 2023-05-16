@@ -1,4 +1,4 @@
-import "./RecipeListPage.css"
+// import "./RecipeListPage.css"
 import { data } from "../utils/data";
 import { RecipeCard } from "../components/ui/RecipeCard.jsx";
 

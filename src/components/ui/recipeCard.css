@@ -14,10 +14,10 @@
   border-radius: 0px 0px 15px 15px;
   background-color: white;
 }
-.recipeCardInfoBox :first-child {
+/* .recipeCardInfoBox :first-child {
   color: grey;
 }
 .recipeCardInfoBox :nth-child(2) {
   font-size: 20px;
-  font-weight: bold;
-}/*# sourceMappingURL=RecipeCard.css.map */
+  font-weight: bold; */
+/* }# sourceMappingURL=RecipeCard.css.map */
