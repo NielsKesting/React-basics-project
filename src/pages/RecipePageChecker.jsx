@@ -7,5 +7,5 @@ export function RecipeListPage() {
     return <RecipePage recipe={element} />;
   });
 
-  return <div className="recipeCardList">{x}</div>;
+  return <div className="recipeList">{x}</div>;
 }

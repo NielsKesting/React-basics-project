@@ -39,8 +39,8 @@
 }
 .recipeCardInfoBox .dietLabels {
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
 }
 .recipeCardInfoBox .dietLabels > li {
   list-style-type: none;
@@ -51,8 +51,8 @@
 }
 .recipeCardInfoBox .cautionList {
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
 }
 .recipeCardInfoBox .cautionList > li {
   list-style-type: none;
