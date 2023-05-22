@@ -42,16 +42,18 @@ export const RecipePage = (recipe) => {
   };
 
   const totalNutrients = () => {
-    const totalNutrients = info.totalNutrients;
     const filters = ["ENERC_KCAL", "CHOCDF", "PROCNT", "FAT", "CHOLE", "NA"];
+    const totalNutrients = info.totalNutrients;
 
-    const neededNutrients = (nutrients, filters) => {
-      return nutrients.filter((nutrient) =>
-        filters.every((filter) => nutrient.includes(filter))
-      );
+    const neededNutrients = (filters, nutrients) => {
+      filters.forEach((filter) => {
+        if (nutrients === filter) {
+          return totalNutrients.filter;
+        }
+      });
     };
 
-    console.log(neededNutrients(totalNutrients, filters));
+    console.log(neededNutrients(filters, totalNutrients));
   };
   totalNutrients();
 
