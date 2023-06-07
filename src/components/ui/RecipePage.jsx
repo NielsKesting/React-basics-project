@@ -60,7 +60,9 @@ export const RecipePage = (recipe) => {
   return (
     <>
       <div className="recipePage">
-        <div className="recipePageBanner"></div>
+        <div className="recipePageBanner">
+          <button type="button" id="backBtn">backbutton</button>
+        </div>
         <img src={info.image} className="recipePagePicture"></img>
         <div className="recipePageInfo">
           <div className="recipePageInfoLeft">

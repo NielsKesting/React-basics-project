@@ -5,8 +5,10 @@ import { RecipeCard } from "../components/ui/RecipeCard.jsx";
 export function RecipeListPage() {
   const recipeList = data.hits;
   let x = recipeList.map((element) => {
-    // return <RecipePage recipe={element} />;
-    return <RecipeCard recipe={element} />;
+    return <>
+      <RecipeCard recipe={element} />;
+      {/* <RecipePage recipe={element} />; */}
+      </>
   });
 
   return (
