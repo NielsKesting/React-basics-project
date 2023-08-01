@@ -1,29 +1,25 @@
 $pageBackgroundColor: white;
-
-$recipePagePictureHeight: 35vh;
-
+$recipePagePictureHeight: 45vh;
 $highlightCorner: 5px;
 
 .recipePage {
-  width: 800px;
+  width: 65vw;
   display: grid;
-
-  grid-template-rows: 10vh $recipePagePictureHeight auto;
-
-  grid-template-columns: 100%;
+  grid-template-rows: 13vh $recipePagePictureHeight auto 8vh;
+  grid-template-columns: 50% 50%;
   grid-template-areas:
-    "banner"
-    "picture"
-    "info";
-  
-  padding-bottom: 3vh;
-
+    "banner banner" 
+    "picture picture"
+    "infoLeft infoRight"
+    "footer footer";
 
   .recipePageBanner {
+    grid-area: banner;
     background-color: $pageBackgroundColor;
     width: auto;
     height: auto;
-    grid-area: banner;
+    display: flex;
+    justify-content: space-around;
   }
 
   .recipePagePicture {
@@ -33,68 +29,94 @@ $highlightCorner: 5px;
     object-fit: cover;
   }
 
-  .recipePageInfo{
-    width: 100%;
+  .recipePageInfoLeft {
+    grid-area: infoLeft;
     background-color: $pageBackgroundColor;
-    grid-area: info;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    width: auto;
+    height: auto;
+    padding-left: 15px;
 
-    .recipePageInfoLeft {
-      width: auto;
-      height: 200px;
+    > h2 {
+      font-size: large;
+      font-weight: 600;
     }
-
-    .recipePageInfoRight {
-      width: auto;
-      height: auto;
-
-      .healthLabelList {
-        width: 400px;
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 5px;
-        
-        > li{
-        background-color: rgb(238, 171, 221);
-        padding: 0px 5px 0px 5px;
-        border-radius: 5px;
-        }
-      }
-
-      .dietLabels {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 5px;
-
     
-        > li {
-          list-style-type: none;
-          background-color: rgb(132, 237, 146);
-          padding: 0px 5px 0px 5px;
-          border-radius: $highlightCorner;
-        }
-      }
-
-      .cautionList {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 5px;
-
-    
-        > li {
-          list-style-type: none;
-          background-color: rgb(240, 146, 146);
-          padding: 0px 5px 0px 5px;
-          border-radius: $highlightCorner;
-        }
+    .ingredientList{
+      > li {
+      list-style-type: none;
       }
     }
   }
-}
 
+  .recipePageInfoRight {
+    grid-area: infoRight;
+    background-color: $pageBackgroundColor;
+    width: auto;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+      
+    .healthLabelList {
+      width: 400px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 5px;
+          
+      > li{
+        background-color: rgb(238, 171, 221);
+        padding: 0px 5px 0px 5px;
+        border-radius: 5px;
+      }
+    }
+
+    .dietLabels {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 5px;
+      
+      > li {
+        list-style-type: none;
+        background-color: rgb(132, 237, 146);
+        padding: 0px 5px 0px 5px;
+        border-radius: $highlightCorner;
+      }
+    }
+
+    .cautionList {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 5px;
+      
+      > li {
+        list-style-type: none;
+        background-color: rgb(240, 146, 146);
+        padding: 0px 5px 0px 5px;
+        border-radius: $highlightCorner;
+      }
+    }
+
+    .nutrientList{
+      width: 400px;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 5px;
+    }
+  }
+
+  .recipePageFooter{
+    grid-area: footer;
+    background-color: $pageBackgroundColor;
+    width: auto;
+    height: auto;
+  }
+}
