@@ -2,7 +2,7 @@ import "./RecipeCardStyle/RecipeCard.css";
 
 export const RecipeCard = ({ recipe, onClick}) => {
   const info = recipe.recipe.recipe;
-
+  console.log(info)
   const veganVegetarian = () => {
     if (info.healthLabels.includes("Vegan")) {
       return "Vegan";
