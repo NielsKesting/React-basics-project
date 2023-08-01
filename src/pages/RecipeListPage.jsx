@@ -2,6 +2,7 @@ import { data } from "../utils/data";
 import { RecipeCard } from "../components/ui/RecipeCard.jsx";
 // import { RecipePage } from "../components/ui/RecipePage.jsx";
 
+
 export function RecipeListPage() {
   const recipeList = data.hits;
   let x = recipeList.map((element) => {
@@ -9,5 +10,9 @@ export function RecipeListPage() {
     // return <RecipePage recipe={element} />;
   });
 
-  return <div className="recipeCardList">{x}</div>;
+  return (
+    <>
+      <div className="recipeCardList">{x}</div>;
+    </>
+  );
 }

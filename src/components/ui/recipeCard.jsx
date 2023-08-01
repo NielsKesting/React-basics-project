@@ -1,8 +1,8 @@
 import "./RecipeCardStyle/RecipeCard.css";
 
-export const RecipeCard = (recipe) => {
+export const RecipeCard = ({ recipe, onClick}) => {
   const info = recipe.recipe.recipe;
-
+  console.log(info)
   const veganVegetarian = () => {
     if (info.healthLabels.includes("Vegan")) {
       return "Vegan";
@@ -38,7 +38,7 @@ export const RecipeCard = (recipe) => {
 
   return (
     <>
-      <div className="recipeCard">
+      <button className="recipeCard" onClick={() => onClick(recipe)}>
         <img src={info.image} className="recipeCardPicture"></img>
         <div className="recipeCardInfoBox">
           <p className="mealType">{info.mealType}</p>
@@ -48,7 +48,7 @@ export const RecipeCard = (recipe) => {
           <p>Dish: {info.dishType}</p>
           {cautions()}
         </div>
-      </div>
+      </button>
     </>
   );
 };
