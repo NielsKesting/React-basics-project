@@ -1,27 +1,35 @@
 $pageBackgroundColor: white;
+
+$recipePagePictureHeight: 35vh;
+
 $highlightCorner: 5px;
 
 .recipePage {
   width: 800px;
   display: grid;
-  grid-template-rows: 5vw 25vw auto;
+
+  grid-template-rows: 10vh $recipePagePictureHeight auto;
+
   grid-template-columns: 100%;
   grid-template-areas:
     "banner"
     "picture"
     "info";
+  
+  padding-bottom: 3vh;
+
 
   .recipePageBanner {
     background-color: $pageBackgroundColor;
     width: auto;
-    height: 50px;
+    height: auto;
     grid-area: banner;
   }
 
   .recipePagePicture {
     grid-area: picture;
     width: 100%;
-    height: 25vw;
+    height: $recipePagePictureHeight;
     object-fit: cover;
   }
 
