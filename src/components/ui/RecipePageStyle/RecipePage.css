@@ -5,7 +5,6 @@
   grid-template-columns: 100%;
   grid-template-areas: "banner" "picture" "info";
   padding-bottom: 3vh;
-
 }
 .recipePage .recipePageBanner {
   background-color: white;
