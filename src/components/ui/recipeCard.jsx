@@ -1,7 +1,10 @@
 import "./RecipeCardStyle/RecipeCard.css";
 
-export const RecipeCard = ( recipe ) => {
+// export const RecipeCard = (recipe, onClick) => {
+export const RecipeCard = (recipe) => {
   const info = recipe.recipe.recipe;
+
+  // Checks if a recipe is vegan or vegetarian and displays it on the card.
   const veganVegetarian = () => {
     if (info.healthLabels.includes("Vegan")) {
       return "Vegan";
@@ -10,6 +13,7 @@ export const RecipeCard = ( recipe ) => {
     }
   };
 
+  // Checks for specific diets and allergies
   const dietLabels = () => {
     if (info.dietLabels.length !== 0) {
       let labelList = info.dietLabels.map((labels) => {

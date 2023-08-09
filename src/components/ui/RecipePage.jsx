@@ -4,17 +4,17 @@ export const RecipePage = (recipe) => {
   const info = recipe.recipe.recipe;
 
   const ingredients = () => {
-    let ingredientList = info.ingredientLines.map((ingredient) =>{
-      return <li>{ingredient}</li>
-    })
+    let ingredientList = info.ingredientLines.map((ingredient) => {
+      return <li>{ingredient}</li>;
+    });
 
     return (
       <>
-      <h2>Ingredients:</h2>
-      <ul className="ingredientList">{ingredientList}</ul>
+        <h2>Ingredients:</h2>
+        <ul className="ingredientList">{ingredientList}</ul>
       </>
-    )
-  }
+    );
+  };
 
   const healthLabels = () => {
     let healthLabelList = info.healthLabels.map((label) => {
@@ -42,9 +42,9 @@ export const RecipePage = (recipe) => {
           <div className="diet">
             <p>Diet:</p>
             <ul className="dietLabels">{labelList}</ul>
-            </div>
+          </div>
         </>
-      )
+      );
     }
   };
 
@@ -67,14 +67,14 @@ export const RecipePage = (recipe) => {
 
   const totalNutrients = () => {
     // const nutrients = ["ENERC_KCAL", "CHOCDF", "PROCNT", "FAT", "CHOLE", "NA"];
-    const calories = Math.trunc(info.totalNutrients.ENERC_KCAL.quantity)
-    const carbs = Math.trunc(info.totalNutrients.CHOCDF.quantity)
-    const protein = Math.trunc(info.totalNutrients.PROCNT.quantity)
-    const fat =  Math.trunc(info.totalNutrients.FAT.quantity)
-    const cholesterol = Math.trunc(info.totalNutrients.CHOLE.quantity)
-    const sodium = Math.trunc(info.totalNutrients.NA.quantity)
+    const calories = Math.trunc(info.totalNutrients.ENERC_KCAL.quantity);
+    const carbs = Math.trunc(info.totalNutrients.CHOCDF.quantity);
+    const protein = Math.trunc(info.totalNutrients.PROCNT.quantity);
+    const fat = Math.trunc(info.totalNutrients.FAT.quantity);
+    const cholesterol = Math.trunc(info.totalNutrients.CHOLE.quantity);
+    const sodium = Math.trunc(info.totalNutrients.NA.quantity);
 
-    return(
+    return (
       <>
         <div className="nutrients">
           <p>Total nutrients:</p>
@@ -88,15 +88,16 @@ export const RecipePage = (recipe) => {
           </ul>
         </div>
       </>
-    )
-
+    );
   };
 
   return (
     <>
       <div className="recipePage">
         <div className="recipePageBanner">
-          <button type="button" id="backBtn">Back</button>
+          <button type="button" id="backBtn">
+            Back
+          </button>
         </div>
         <img src={info.image} className="recipePagePicture"></img>
         <div className="recipePageInfoLeft">

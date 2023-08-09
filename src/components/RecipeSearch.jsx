@@ -1,16 +1,7 @@
-export function RecipeSearch() {
-
-  
-  const textInput = ({onChange}) => {
-    <input className="textInput" type="text" placeholder="Search" onChange={onChange}></input>
+export function RecipeSearch(searchField) {
+  if (searchField.length == 0) {
+    return data.hits;
+  } else {
+    return data.hits;
   }
-
-  const handleChange = (event) => {
-    setSearchField(event.target.value)
-  }
-  return (
-    <>
-      <textInput onChange={handleChange} />
-    </>
-  );
 }
