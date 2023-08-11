@@ -5,7 +5,7 @@ export const RecipePage = (recipe) => {
 
   const ingredients = () => {
     let ingredientList = info.ingredientLines.map((ingredient) => {
-      return <li>{ingredient}</li>;
+      return <li key={ingredient}>{ingredient}</li>;
     });
 
     return (
@@ -18,7 +18,7 @@ export const RecipePage = (recipe) => {
 
   const healthLabels = () => {
     let healthLabelList = info.healthLabels.map((label) => {
-      return <li>{label}</li>;
+      return <li key={label}>{label}</li>;
     });
 
     return (
@@ -34,7 +34,7 @@ export const RecipePage = (recipe) => {
   const dietLabels = () => {
     if (info.dietLabels.length !== 0) {
       let labelList = info.dietLabels.map((labels) => {
-        return <li>{labels}</li>;
+        return <li key={labels}>{labels}</li>;
       });
 
       return (
@@ -51,7 +51,7 @@ export const RecipePage = (recipe) => {
   const cautions = () => {
     if (info.cautions.length !== 0) {
       let cautionList = info.cautions.map((cautions) => {
-        return <li>{cautions}</li>;
+        return <li key={cautions}>{cautions}</li>;
       });
 
       return (

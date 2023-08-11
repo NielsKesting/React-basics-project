@@ -17,7 +17,7 @@ export const RecipeCard = (recipe) => {
   const dietLabels = () => {
     if (info.dietLabels.length !== 0) {
       let labelList = info.dietLabels.map((labels) => {
-        return <li>{labels}</li>;
+        return <li key={labels}>{labels}</li>;
       });
 
       return <ul className="dietLabels">{labelList}</ul>;
@@ -27,7 +27,7 @@ export const RecipeCard = (recipe) => {
   const cautions = () => {
     if (info.cautions.length !== 0) {
       let cautionList = info.cautions.map((cautions) => {
-        return <li>{cautions}</li>;
+        return <li key={cautions}>{cautions}</li>;
       });
 
       return (
@@ -41,7 +41,7 @@ export const RecipeCard = (recipe) => {
 
   return (
     <>
-      <div className="recipeCard">
+      <button className="recipeCard" type="button">
         <img src={info.image} className="recipeCardPicture"></img>
         <div className="recipeCardInfoBox">
           <p className="mealType">{info.mealType}</p>
@@ -51,7 +51,7 @@ export const RecipeCard = (recipe) => {
           <p>Dish: {info.dishType}</p>
           {cautions()}
         </div>
-      </div>
+      </button>
     </>
   );
 };

@@ -25,7 +25,7 @@ export function RecipeListPage() {
 
   // display
   let x = recipeCardArray(searchResult).map((element) => {
-    return <RecipeCard recipe={element} />;
+    return <RecipeCard key={element.label} recipe={element} />;
     // return <RecipePage recipe={element} />;
   });
 
