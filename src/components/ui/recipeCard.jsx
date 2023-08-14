@@ -1,6 +1,5 @@
 import "./RecipeCardStyle/RecipeCard.css";
 
-// export const RecipeCard = (recipe, onClick) => {
 export const RecipeCard = (recipe) => {
   const info = recipe.recipe.recipe;
 
@@ -41,7 +40,7 @@ export const RecipeCard = (recipe) => {
 
   return (
     <>
-      <button className="recipeCard" type="button">
+      <button className="recipeCard">
         <img src={info.image} className="recipeCardPicture"></img>
         <div className="recipeCardInfoBox">
           <p className="mealType">{info.mealType}</p>

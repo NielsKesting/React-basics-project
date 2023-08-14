@@ -1,7 +1,7 @@
 import "./RecipePageStyle/RecipePage.css";
 
-export const RecipePage = (recipe) => {
-  const info = recipe.recipe.recipe;
+export const RecipePage = (chosenRecipe) => {
+  const info = chosenRecipe.recipe.recipe;
 
   const ingredients = () => {
     let ingredientList = info.ingredientLines.map((ingredient) => {
