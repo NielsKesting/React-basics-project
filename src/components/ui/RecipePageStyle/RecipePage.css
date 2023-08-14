@@ -68,7 +68,6 @@
   border-radius: 5px;
 }
 .recipePage .recipePageInfoRight .cautionList {
-  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
