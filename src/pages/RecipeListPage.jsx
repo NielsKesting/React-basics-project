@@ -1,3 +1,4 @@
+import "./RecipeListPageStyle/RecipeListPage.css";
 import { useState } from "react";
 import { RecipePage } from "../components/ui/RecipePage.jsx";
 import { PageRetriever } from "../components/PageRetriever.jsx";

@@ -1,7 +1,7 @@
 import "./RecipePageStyle/RecipePage.css";
 
-export const RecipePage = (chosenRecipe) => {
-  const info = chosenRecipe.recipe.recipe;
+export const RecipePage = ({ chosenRecipe, onClick }) => {
+  const info = chosenRecipe.recipe;
 
   const ingredients = () => {
     let ingredientList = info.ingredientLines.map((ingredient) => {
@@ -95,7 +95,7 @@ export const RecipePage = (chosenRecipe) => {
     <>
       <div className="recipePage">
         <div className="recipePageBanner">
-          <button type="button" id="backBtn">
+          <button type="button" id="backBtn" onClick={() => onClick()}>
             Back
           </button>
         </div>

@@ -1,0 +1,12 @@
+.textInput {
+  text-align: center;
+  width: 90vw;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+@media (min-width: 1500px) {
+  .textInput {
+    width: 22vw;
+  }
+}

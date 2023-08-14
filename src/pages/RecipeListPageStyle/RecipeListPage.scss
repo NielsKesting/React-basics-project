@@ -1,0 +1,38 @@
+$heightGaps: 3vh;
+
+body {
+  background-color: rgb(92, 205, 92);
+}
+
+.recipeListPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    color: white;
+    font-size: 10vw;
+    padding: none;
+    margin: 1vh 0vh $heightGaps 0vh;
+  }
+
+  input {
+    margin-bottom: $heightGaps;
+  }
+
+  .recipeSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $heightGaps;
+    margin-bottom: $heightGaps;
+  }
+}
+
+@media (min-width: 1500px) {
+  .recipeListPage {
+    label {
+      font-size: 5vw;
+    }
+  }
+}

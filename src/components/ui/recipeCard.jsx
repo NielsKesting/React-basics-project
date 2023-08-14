@@ -1,7 +1,7 @@
 import "./RecipeCardStyle/RecipeCard.css";
 
-export const RecipeCard = (recipe) => {
-  const info = recipe.recipe.recipe;
+export const RecipeCard = ({ chosenRecipe, onClick }) => {
+  const info = chosenRecipe.recipe;
 
   // Checks if a recipe is vegan or vegetarian and displays it on the card.
   const veganVegetarian = () => {
@@ -40,15 +40,19 @@ export const RecipeCard = (recipe) => {
 
   return (
     <>
-      <button className="recipeCard">
+      <button className="recipeCard" onClick={() => onClick(chosenRecipe)}>
         <img src={info.image} className="recipeCardPicture"></img>
         <div className="recipeCardInfoBox">
-          <p className="mealType">{info.mealType}</p>
-          <h2>{info.label}</h2>
-          <p className="veganVegetarian">{veganVegetarian()}</p>
-          {dietLabels()}
-          <p>Dish: {info.dishType}</p>
-          {cautions()}
+          <div className="meal">
+            <p className="mealType">{info.mealType}</p>
+            <h2>{info.label}</h2>
+          </div>
+          <div className="details">
+            <p className="veganVegetarian">{veganVegetarian()}</p>
+            {dietLabels()}
+            <p>Dish: {info.dishType}</p>
+            {cautions()}
+          </div>
         </div>
       </button>
     </>

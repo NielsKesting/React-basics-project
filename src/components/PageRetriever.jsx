@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { data } from "../utils/data";
-import { TextInput } from "../components/ui/TextInput";
-import { RecipeCard } from "../components/ui/recipeCard";
+import { TextInput } from "./ui/TextInput";
+import { RecipeArray } from "./RecipeArray";
 
 export function PageRetriever({ onClick }) {
   let [searchResult, setSearchResult] = useState("");
@@ -12,7 +12,7 @@ export function PageRetriever({ onClick }) {
       return data.hits;
     } else {
       let filteredList = data.hits.filter((object) =>
-        object.recipe.label.toLowerCase().includes(searchResult)
+        object.recipe.label.toLowerCase().includes(searchResult.toLowerCase())
       );
       return filteredList;
     }
@@ -22,18 +22,16 @@ export function PageRetriever({ onClick }) {
     setSearchResult(event.target.value);
   };
 
-  // display
-  let x = recipeCardArray(searchResult).map((element) => {
-    return (
-      <RecipeCard key={element.label} recipe={element} onClick={onClick} />
-    );
-  });
-
   return (
     <>
       <label>Recipe checker</label>
       <TextInput onChange={handleChange} />
-      <div className="recipeCardList">{x}</div>;
+      <section className="recipeSection">
+        <RecipeArray
+          onClick={onClick}
+          recipes={recipeCardArray(searchResult)}
+        />
+      </section>
     </>
   );
 }
